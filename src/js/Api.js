@@ -1,4 +1,4 @@
-class Api {
+export default class Api {
     constructor() {}
     getUserInfo() { // 1-е задание
         return fetch('https://praktikum.tk/cohort11/users/me', {

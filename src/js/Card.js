@@ -1,7 +1,8 @@
-class Card {
-    static template = document.querySelector('#cadr-template').content;
+export default class Card {
+    // static template = document.querySelector('#cadr-template').content;
 
     constructor(name, link, likes, api, openImageCallback) {
+        this.template = document.querySelector('#cadr-template').content;
         this.name = name;
         this.link = link;
         this.likes = likes;
@@ -22,7 +23,7 @@ class Card {
     }
 
     create() {
-        this.view = Card.template.cloneNode(true).children[0];
+        this.view = this.template.cloneNode(true).children[0];
         this.view.querySelector('.place-card__name').textContent = this.name;
         this.view.querySelector('.place-card__image').style.backgroundImage = `url(${this.link})`;
         this.view.querySelector('.place-card__like-number').textContent = this.likes;

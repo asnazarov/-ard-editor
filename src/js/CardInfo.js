@@ -1,4 +1,4 @@
-class CardInfo {
+export default class CardInfo {
     constructor(root, cardForm, inputTitle, inputLink, cardList, popupCard, formValidator) {
         this.cardList = cardList;
         this.popupCard = popupCard;
