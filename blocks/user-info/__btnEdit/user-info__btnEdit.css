@@ -1,0 +1,16 @@
+.user-info__btnEdit {
+    margin-top: 24px;
+    font-size: 12px;
+    line-height: 15px;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.user-info__btnEdit:focus {
+    outline-color: greenyellow;
+}

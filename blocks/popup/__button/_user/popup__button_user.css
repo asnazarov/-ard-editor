@@ -1,0 +1,10 @@
+.popup__button_user {
+    margin-top: 48px;
+    color: white;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    background-color: black;
+}
