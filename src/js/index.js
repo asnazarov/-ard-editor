@@ -14,8 +14,9 @@ import CardInfo from './CardInfo.js';
     const buttonCard = root.querySelector('.user-info__button'); //open кнопка попап карточки
     const nameElement = root.querySelector('.user-info__name');
     const jobElement = root.querySelector('.user-info__job');
+    const serverUrl = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort11' : 'https://praktikum.tk/cohort1';
     const api = new Api({
-        baseUrl: 'https://praktikum.tk/cohort11',
+        baseUrl: serverUrl,
         headers: {
             authorization: 'f19dbf25-1050-4e87-9f03-ebd68dde2c37',
             'Content-Type': 'application/json'
