@@ -1,13 +1,22 @@
+import "../pages/style.css"
+import Api from "./Api.js";
+import Card from "./Card.js";
+import CardList from "./CardList.js";
+import Popup from "./Popup.js";
+import FormValidator from './FormValidator.js';
+import UserInfo from './UserInfo.js';
+import CardInfo from './CardInfo.js';
 (function() {
+    const title = document.querySelector('div')
     const root = document.querySelector('.root');
     const userPopup = root.querySelector('#addUserPopup'); // попап юзера
     const cardPopup = root.querySelector('#addCardPopup') // попап карточки
     const buttonCard = root.querySelector('.user-info__button'); //open кнопка попап карточки
     const nameElement = root.querySelector('.user-info__name');
     const jobElement = root.querySelector('.user-info__job');
-
+    const serverUrl = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort11' : 'https://praktikum.tk/cohort11';
     const api = new Api({
-        baseUrl: 'https://praktikum.tk/cohort11',
+        baseUrl: serverUrl,
         headers: {
             authorization: 'f19dbf25-1050-4e87-9f03-ebd68dde2c37',
             'Content-Type': 'application/json'

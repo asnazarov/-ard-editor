@@ -1,7 +1,9 @@
-class Api {
-    constructor() {}
+export default class Api {
+    constructor(options) {
+        this.options = options;
+    }
     getUserInfo() { // 1-е задание
-        return fetch('https://praktikum.tk/cohort11/users/me', {
+        return fetch(`${this.options.baseUrl}/users/me`, {
                 method: "GET",
                 headers: {
                     authorization: 'f19dbf25-1050-4e87-9f03-ebd68dde2c37',
@@ -18,7 +20,7 @@ class Api {
     }
 
     getInitialCards() { //2е задание
-        return fetch('https://praktikum.tk/cohort11/cards', {
+        return fetch(`${this.options.baseUrl}/cards`, {
                 method: "GET",
                 headers: {
                     authorization: 'f19dbf25-1050-4e87-9f03-ebd68dde2c37',
@@ -35,7 +37,7 @@ class Api {
     }
 
     updateUserInfo(nameInput, jobInput) { //3е задание
-            return fetch('https://praktikum.tk/cohort11/users/me', {
+            return fetch(`${this.options.baseUrl}/users/me`, {
                     method: "PATCH",
                     headers: {
                         authorization: 'f19dbf25-1050-4e87-9f03-ebd68dde2c37',
@@ -76,7 +78,7 @@ class Api {
         //         })
         // }
     deleteCard(id) { //6е задание
-        return fetch(`https://praktikum.tk/cohort11/cards/${id}`, {
+        return fetch(`${this.options.baseUrl}/cards/${id}`, {
                 method: "DELETE",
                 headers: {
                     authorization: 'f19dbf25-1050-4e87-9f03-ebd68dde2c37',

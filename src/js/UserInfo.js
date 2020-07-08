@@ -1,4 +1,4 @@
-class UserInfo {
+export default class UserInfo {
     constructor(root, userForm, nameElement, jobElement, popupUser, api) {
         this.userForm = root.querySelector(userForm);
         this.nameElement = nameElement;

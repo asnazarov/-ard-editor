@@ -4,24 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mesto</title>
-    <link rel="stylesheet" href="./pages/index.css">
-    <script src="./js/Api.js" defer></script>
-    <script src="./js/Card.js" defer></script>
-    <script src="./js/CardList.js" defer></script>
-    <script src="./js/Popup.js" defer></script>
-    <script src="./js/UserInfo.js" defer></script>
-    <script src="./js/CardInfo.js" defer></script>
-    <script src="./js/FormValidator.js" defer></script>
-    <script src="./js/main.js" defer></script>
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
 
 <body>
     <div class="root">
         <header class="header root__section">
-            <img src="./images/logo.svg" alt="mesto logo" class="logo">
-            <!-- <img src="<%=require('./images/logo.svg')%>" alt="mesto logo" class="logo"> -->
+            <!-- <img src="./images/logo.svg" alt="mesto logo" class="logo"> -->
+            <img src="<%=require('./images/logo.svg')%>" alt="mesto logo" class="logo">
         </header>
         <div class="profile root__section">
             <div class="user-info">
@@ -34,7 +25,6 @@
                 <button class="button user-info__button">+</button>
             </div>
         </div>
-
         <div class="places-list root__section">
             <!-- Пример вёрстки карточки: -->
             <template id='cadr-template' style="display: none;">
@@ -57,8 +47,8 @@
         </div>
         <div id="addUserPopup" class="popup">
             <div class="popup__content">
-                <!-- <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close"> -->
-                <img src="./images/close.svg" alt="" class="popup__close">
+                <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+                <!-- <img src="./images/close.svg" alt="" class="popup__close"> -->
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <form class="popup__form form-addUser" novalidate name="new">
                     <div class="input-container ">
@@ -77,8 +67,8 @@
         </div>
         <div id="addCardPopup" class="popup">
             <div class="popup__content">
-                <!-- <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close"> -->
-                <img src="./images/close.svg" alt="" class="popup__close">
+                <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+                <!-- <img src="./images/close.svg" alt="" class="popup__close"> -->
                 <h3 class="popup__title">Новое место</h3>
                 <form class="popup__form form-addCard" name="new">
                     <div class="input-container ">
@@ -96,12 +86,15 @@
         </div>
         <div id="imagePopup" class="popup">
             <div class="popup__content-image">
-                <!-- <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close"> -->
-                <img src="./images/close.svg" alt="" class="popup__close">
+                <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+                <!-- <img src="./images/close.svg" alt="" class="popup__close"> -->
                 <img src="" class="popup__image" alt="">
             </div>
         </div>
 
+    </div>
+
+    <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>
 
 </html>

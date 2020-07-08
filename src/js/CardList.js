@@ -1,11 +1,12 @@
-class CardList {
+export default class CardList {
+    // static template = document.querySelector('#cadr-template').content;
+
     constructor(root, container, createCards, api) {
         this.placesList = root.querySelector(container);
         this.createCards = createCards;
         this.api = api;
         this.render(root)
     }
-
     addCard = (cardTitleInput, cardUrlInput, likesLength, apiID) =>
         this.placesList.append(this.createCards(cardTitleInput, cardUrlInput, likesLength, apiID).create(this.placesList));
 
