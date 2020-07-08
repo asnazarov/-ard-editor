@@ -78,7 +78,7 @@ export default class Api {
         //         })
         // }
     deleteCard(id) { //6е задание
-        return fetch(`https://praktikum.tk/cohort11/cards/${id}`, {
+        return fetch(`${this.options.baseUrl}/cards/${id}`, {
                 method: "DELETE",
                 headers: {
                     authorization: 'f19dbf25-1050-4e87-9f03-ebd68dde2c37',
