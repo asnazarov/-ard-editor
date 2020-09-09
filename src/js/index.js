@@ -14,7 +14,8 @@ import CardInfo from './CardInfo.js';
     const buttonCard = root.querySelector('.user-info__button'); //open кнопка попап карточки
     const nameElement = root.querySelector('.user-info__name');
     const jobElement = root.querySelector('.user-info__job');
-    // const serverUrl = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort11' : 'https://praktikum.tk/cohort11';
+    const preloader = root.querySelector('.preloaderWrapper') // прелоадер
+        // const serverUrl = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort11' : 'https://praktikum.tk/cohort11';
     const serverUrl = NODE_ENV === 'development' ? 'http://nomoreparties.co/cohort11' : 'https://nomoreparties.co/cohort11';
     const api = new Api({
         baseUrl: serverUrl,
@@ -30,7 +31,7 @@ import CardInfo from './CardInfo.js';
         popupPicture.open();
     }
     const createCards = (...arg) => new Card(...arg, openImagePopup);
-    const cardList = new CardList(root, '.places-list', createCards, api);
+    const cardList = new CardList(root, '.places-list', createCards, api, preloader);
     const popupUser = new Popup(userPopup);
 
     function openPopupUser() { // попап юзера

@@ -1,10 +1,12 @@
 export default class CardList {
     // static template = document.querySelector('#cadr-template').content;
 
-    constructor(root, container, createCards, api) {
+    constructor(root, container, createCards, api, preloader) {
         this.placesList = root.querySelector(container);
         this.createCards = createCards;
         this.api = api;
+        this.preloader = preloader;
+        console.log(this.preloader)
         this.render(root)
     }
     addCard = (cardTitleInput, cardUrlInput, likesLength, apiID) =>
@@ -12,6 +14,10 @@ export default class CardList {
 
     render = () => {
         this.api.getInitialCards()
-            .then(cards => { cards.forEach(item => this.addCard(item.name, item.link, item.likes.length, item._id)); })
+            .then(cards => {
+                cards.forEach(item => this.addCard(item.name, item.link, item.likes.length, item._id));
+                this.preloader.style.display = 'none'
+            })
+
     }
 }
