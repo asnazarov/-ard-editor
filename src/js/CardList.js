@@ -6,7 +6,6 @@ export default class CardList {
         this.createCards = createCards;
         this.api = api;
         this.preloader = preloader;
-        console.log(this.preloader)
         this.render(root)
     }
     addCard = (cardTitleInput, cardUrlInput, likesLength, apiID) =>

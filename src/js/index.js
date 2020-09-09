@@ -52,5 +52,5 @@ import CardInfo from './CardInfo.js';
     formValidator.setEventListeners();
     cardValidator.setEventListeners();
     new UserInfo(root, '.form-addUser', nameElement, jobElement, popupUser, api);
-    new CardInfo(root, '.form-addCard', '.popup__input_type_title', '.popup__input_type_link-url', cardList, popupCard, formValidator);
+    new CardInfo(root, '.form-addCard', '.popup__input_type_title', '.popup__input_type_link-url', cardList, popupCard, formValidator, api);
 })();
